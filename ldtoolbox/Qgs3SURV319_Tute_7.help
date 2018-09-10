@@ -1,0 +1,1 @@
+The SURV319_Tute_7 python script combines two tasks into a single workflow.  First it converts a point vector layer representing a hydrolgic pit into a raster layer and then uses this newly created raster layer as a pit mask layer in the TauDEM pit fill algorithm.

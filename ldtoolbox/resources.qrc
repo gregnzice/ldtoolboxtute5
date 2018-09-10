@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="plugins/ldtoolbox/" >
+        <file>epanet.png</file>
+        <file>engineer.png</file>
+        <file>swmm.png</file>
+    </qresource>
+</RCC>
