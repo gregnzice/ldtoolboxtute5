@@ -2,7 +2,7 @@
 
 """
 /***************************************************************************
- Plugin for SURV319 Tute 7
+ Plugin for SURV319 Tute 9
                                  A QGIS plugin
                               -------------------
         Date                 : July 2018
@@ -45,7 +45,7 @@ from qgis.core import (QgsMessageLog,QgsProcessingAlgorithm,
                        QgsProject,
                        QgsLayerTreeLayer)
 
-class SURV319Tute7(QgsProcessingAlgorithm):
+class SURV319Tute9(QgsProcessingAlgorithm):
 
     #Variables to assign names of layers to.
     DEM='DEM'
@@ -84,7 +84,7 @@ class SURV319Tute7(QgsProcessingAlgorithm):
         #Below we set up a parameter dictionary for the TauDEM pit fill tool.
 
         #Provide the code to set up the parameter dictionary to be input to the taudem:pitremove tool.
-        
+
         #Below we run the taudem:pitremove tool with the pitfill_param dictionary and pipe any feedback into the processing log.
         run("taudem:pitremove",pitfill_param,feedback=QgsProcessingFeedback())
 
@@ -99,9 +99,9 @@ class SURV319Tute7(QgsProcessingAlgorithm):
         return  {}
 
     def name(self):
-        return 'surv319tute7'
+        return 'surv319tute9'
     def tr(self, string):
-        return QCoreApplication.translate('surv319tute7', string)
+        return QCoreApplication.translate('surv319tute9', string)
 
     def icon(self):
         return QIcon(":/plugins/ldtoolbox/swmm.png")
@@ -111,10 +111,10 @@ class SURV319Tute7(QgsProcessingAlgorithm):
         Returns the translated algorithm name, which should be used for any
         user-visible display of the algorithm name.
         """
-        return self.tr('SURV319 Tute 7')
+        return self.tr('SURV319 Tute 9')
     def shortHelpString(self):
         file=os.path.realpath(__file__)
-        file = os.path.join(os.path.dirname(file),'Qgs3SURV319_Tute_7.help')
+        file = os.path.join(os.path.dirname(file),'Qgs3SURV319_Tute_9.help')
         if not os.path.exists(file):
             return ''
         with open(file) as helpf:
@@ -139,4 +139,4 @@ class SURV319Tute7(QgsProcessingAlgorithm):
         return 'SWMM'
 
     def createInstance(self):
-        return SURV319Tute7()
+        return SURV319Tute9()
