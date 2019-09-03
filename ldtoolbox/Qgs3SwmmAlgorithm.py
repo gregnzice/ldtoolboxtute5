@@ -762,11 +762,14 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
                     feature['id']     = n
                     n=n+1
                     feature['Link']     = link_id
-                    if platform=='win32':
-                        feature['Time']     = convert_date(tbl[0])+' '+tbl[1]
-                    elif platform=='linux' or platform=='darwin':
-                        temp=re.search('^(\d\d)/(\d\d)/(\d\d\d\d)$',tbl[0])
-                        feature['Time'] = temp.group(3)+'-'+temp.group(1)+'-'+temp.group(2)+ ' '+tbl[1]
+                    temp=re.search('^(\d\d)/(\d\d)/(\d\d\d\d)$',tbl[0])
+                    feature['Time'] = temp.group(3)+'-'+temp.group(1)+'-'+temp.group(2)+ ' '+tbl[1]
+                    #The below code is needed if running an old version of swmm.
+                    #if platform=='win32':
+                    #    feature['Time']     = convert_date(tbl[0])+' '+tbl[1]
+                    #elif platform=='linux' or platform=='darwin':
+                    #    temp=re.search('^(\d\d)/(\d\d)/(\d\d\d\d)$',tbl[0])
+                    #    feature['Time'] = temp.group(3)+'-'+temp.group(1)+'-'+temp.group(2)+ ' '+tbl[1]
                     feature['Flow']     = tbl[2]
                     feature['Velocity'] = tbl[3]
                     feature['Depth']    = tbl[4]
@@ -779,11 +782,14 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
                     feature['id']     = p
                     p=p+1
                     feature['Subcatchment']     = subcatchment_id
-                    if platform=='win32':
-                        feature['Time']     = convert_date(tbl[0])+' '+tbl[1]
-                    elif platform=='linux' or platform=='darwin':
-                        temp=re.search('^(\d\d)/(\d\d)/(\d\d\d\d)$',tbl[0])
-                        feature['Time'] = temp.group(3)+'-'+temp.group(1)+'-'+temp.group(2)+ ' '+tbl[1]
+                    temp=re.search('^(\d\d)/(\d\d)/(\d\d\d\d)$',tbl[0])
+                    feature['Time'] = temp.group(3)+'-'+temp.group(1)+'-'+temp.group(2)+ ' '+tbl[1]
+                    #The below code is needed if running an old version of swmm.
+                    #if platform=='win32':
+                    #    feature['Time']     = convert_date(tbl[0])+' '+tbl[1]
+                    #elif platform=='linux' or platform=='darwin':
+                    #    temp=re.search('^(\d\d)/(\d\d)/(\d\d\d\d)$',tbl[0])
+                    #    feature['Time'] = temp.group(3)+'-'+temp.group(1)+'-'+temp.group(2)+ ' '+tbl[1]
                     feature['Precip']     = tbl[2]
                     feature['Losses'] = tbl[3]
                     feature['Runoff']    = tbl[4]
