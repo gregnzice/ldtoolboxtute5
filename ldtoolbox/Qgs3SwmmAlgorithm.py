@@ -742,11 +742,14 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
                     feature['id']=m
                     m=m+1
                     feature['Node']     = node_id
-                    if platform=='win32':
-                        feature['Time']     = convert_date(tbl[0])+' '+tbl[1]
-                    elif platform=='linux' or platform=='darwin':
-                        temp=re.search('^(\d\d)/(\d\d)/(\d\d\d\d)$',tbl[0])
-                        feature['Time'] = temp.group(3)+'-'+temp.group(1)+'-'+temp.group(2)+ ' '+tbl[1]
+                    temp=re.search('^(\d\d)/(\d\d)/(\d\d\d\d)$',tbl[0])
+                    feature['Time'] = temp.group(3)+'-'+temp.group(1)+'-'+temp.group(2)+ ' '+tbl[1]
+                    #The below code is needed if running an old version of swmm.
+                    #if platform=='win32':
+                    #    feature['Time']     = convert_date(tbl[0])+' '+tbl[1]
+                    #elif platform=='linux' or platform=='darwin':
+                    #    temp=re.search('^(\d\d)/(\d\d)/(\d\d\d\d)$',tbl[0])
+                    #    feature['Time'] = temp.group(3)+'-'+temp.group(1)+'-'+temp.group(2)+ ' '+tbl[1]
                     feature['Inflow']   = tbl[2]
                     feature['Flooding'] = tbl[3]
                     feature['Depth']    = tbl[4]
