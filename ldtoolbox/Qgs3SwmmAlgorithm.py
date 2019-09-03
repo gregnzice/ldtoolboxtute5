@@ -139,7 +139,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.OPTIONS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.OPTIONS,'Analysis options',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.OPTIONS,'Analysis options',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.OPTIONS,'Analysis options',[QgsProcessing.TypeVector],'',True))
 
@@ -147,7 +147,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.REPORT.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.REPORT,'Output reporting instructions',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.REPORT,'Output reporting instructions',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.REPORT,'Output reporting instructions',[QgsProcessing.TypeVector],'',True))
 
@@ -155,7 +155,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.FILES.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.FILES,'Interface file options',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.FILES,'Interface file options',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.FILES,'Interface file options',[QgsProcessing.TypeVector],'',True))
 
@@ -171,7 +171,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.HYDROGRAPHS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.HYDROGRAPHS,'Unit hydrograph data used to construct RDII inflows',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.HYDROGRAPHS,'Unit hydrograph data used to construct RDII inflows',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.HYDROGRAPHS,'Unit hydrograph data used to construct RDII inflows',[QgsProcessing.TypeVector],'',True))
 
@@ -179,7 +179,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.EVAPORATION.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.EVAPORATION,'Evaporation data',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.EVAPORATION,'Evaporation data',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.EVAPORATION,'Evaporation data',[QgsProcessing.TypeVector],'',True))
 
@@ -187,7 +187,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.TEMPERATURE.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.TEMPERATURE,'Air temperature and snow melt data',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.TEMPERATURE,'Air temperature and snow melt data',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.TEMPERATURE,'Air temperature and snow melt data',[QgsProcessing.TypeVector],'',True))
 
@@ -195,7 +195,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.SUBCATCHMENTS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.SUBCATCHMENTS,'Basic subcatchment information',[QgsProcessing.TypeVectorPolygon],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.SUBCATCHMENTS,'Basic subcatchment information',[QgsProcessing.TypeVectorPolygon],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.SUBCATCHMENTS,'Basic subcatchment information',[QgsProcessing.TypeVectorPolygon],'',True))
 
@@ -203,7 +203,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.SUBAREAS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.SUBAREAS,'Subcatchment impervious/pervious sub-area data',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.SUBAREAS,'Subcatchment impervious/pervious sub-area data',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.SUBAREAS,'Subcatchment impervious/pervious sub-area data',[QgsProcessing.TypeVector],'',True))
 
@@ -211,7 +211,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.INFILTRATION.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.INFILTRATION,'Subcatchment infiltration parameters',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.INFILTRATION,'Subcatchment infiltration parameters',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.INFILTRATION,'Subcatchment infiltration parameters',[QgsProcessing.TypeVector],'',True))
 
@@ -219,7 +219,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.LID_CONTROLS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.LID_CONTROLS,'Low impact development control information',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.LID_CONTROLS,'Low impact development control information',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.LID_CONTROLS,'Low impact development control information',[QgsProcessing.TypeVector],'',True))
 
@@ -227,7 +227,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.LID_USAGE.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.LID_USAGE,'Assignment of LID controls to subcatchments',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.LID_USAGE,'Assignment of LID controls to subcatchments',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.LID_USAGE,'Assignment of LID controls to subcatchments',[QgsProcessing.TypeVector],'',True))
 
@@ -235,7 +235,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.AQUIFERS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.AQUIFERS,'Groundwater aquifer parameters',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.AQUIFERS,'Groundwater aquifer parameters',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.AQUIFERS,'Groundwater aquifer parameters',[QgsProcessing.TypeVector],'',True))
 
@@ -243,7 +243,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.SNOWPACKS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.SNOWPACKS,'Subcatchment snow pack parameters',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.SNOWPACKS,'Subcatchment snow pack parameters',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.SNOWPACKS,'Subcatchment snow pack parameters',[QgsProcessing.TypeVector],'',True))
 
@@ -323,7 +323,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.XSECTIONS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.XSECTIONS,'Conduit, orifice, and weir cross-section geometry',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.XSECTIONS,'Conduit, orifice, and weir cross-section geometry',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.XSECTIONS,'Conduit, orifice, and weir cross-section geometry',[QgsProcessing.TypeVector],'',True))
 
@@ -331,7 +331,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.TRANSECTS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.TRANSECTS,'Transect geometry for conduits with irregular cross-sections',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.TRANSECTS,'Transect geometry for conduits with irregular cross-sections',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.TRANSECTS,'Transect geometry for conduits with irregular cross-sections',[QgsProcessing.TypeVector],'',True))
 
@@ -339,7 +339,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.LOSSES.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.LOSSES,'Conduit entrance/exit losses and flap valves',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.LOSSES,'Conduit entrance/exit losses and flap valves',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.LOSSES,'Conduit entrance/exit losses and flap valves',[QgsProcessing.TypeVector],'',True))
 
@@ -347,7 +347,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.CONTROLS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.CONTROLS,'Rules that control pump and regulator operation',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.CONTROLS,'Rules that control pump and regulator operation',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.CONTROLS,'Rules that control pump and regulator operation',[QgsProcessing.TypeVector],'',True))
 
@@ -355,7 +355,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.POLLUTANTS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.POLLUTANTS,'Pollutant information',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.POLLUTANTS,'Pollutant information',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.POLLUTANTS,'Pollutant information',[QgsProcessing.TypeVector],'',True))
 
@@ -363,7 +363,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.LANDUSES.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.LANDUSES,'Land use categories',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.LANDUSES,'Land use categories',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.LANDUSES,'Land use categories',[QgsProcessing.TypeVector],'',True))
 
@@ -371,7 +371,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.COVERAGES.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.COVERAGES,'Assignment of land uses to subcatchments',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.COVERAGES,'Assignment of land uses to subcatchments',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.COVERAGES,'Assignment of land uses to subcatchments',[QgsProcessing.TypeVector],'',True))
 
@@ -379,7 +379,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.BUILDUP.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.BUILDUP,'Buildup functions for pollutants and land uses',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.BUILDUP,'Buildup functions for pollutants and land uses',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.BUILDUP,'Buildup functions for pollutants and land uses',[QgsProcessing.TypeVector],'',True))
 
@@ -387,7 +387,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.WASHOFF.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.WASHOFF,'Washoff functions for pollutants and land uses',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.WASHOFF,'Washoff functions for pollutants and land uses',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.WASHOFF,'Washoff functions for pollutants and land uses',[QgsProcessing.TypeVector],'',True))
 
@@ -395,7 +395,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.TREATMENT.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.TREATMENT,'Pollutant removal functions at conveyance system nodes',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.TREATMENT,'Pollutant removal functions at conveyance system nodes',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.TREATMENT,'Pollutant removal functions at conveyance system nodes',[QgsProcessing.TypeVector],'',True))
 
@@ -403,7 +403,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.INFLOWS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.INFLOWS,'External hydrograph/pollutograph inflow at nodes',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.INFLOWS,'External hydrograph/pollutograph inflow at nodes',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.INFLOWS,'External hydrograph/pollutograph inflow at nodes',[QgsProcessing.TypeVector],'',True))
 
@@ -411,7 +411,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.DWF.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.DWF,'Baseline dry weather sanitary inflow at nodes',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.DWF,'Baseline dry weather sanitary inflow at nodes',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.DWF,'Baseline dry weather sanitary inflow at nodes',[QgsProcessing.TypeVector],'',True))
 
@@ -419,7 +419,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.PATTERNS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.PATTERNS,'Periodic variation in dry weather inflow',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.PATTERNS,'Periodic variation in dry weather inflow',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.PATTERNS,'Periodic variation in dry weather inflow',[QgsProcessing.TypeVector],'',True))
 
@@ -427,7 +427,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.RDII.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.RDII,'Rainfall-dependent I/I information at nodes',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.RDII,'Rainfall-dependent I/I information at nodes',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.RDII,'Rainfall-dependent I/I information at nodes',[QgsProcessing.TypeVector],'',True))
 
@@ -435,7 +435,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.LOADINGS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.LOADINGS,'Initial pollutant loads on subcatchments',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.LOADINGS,'Initial pollutant loads on subcatchments',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.LOADINGS,'Initial pollutant loads on subcatchments',[QgsProcessing.TypeVector],'',True))
 
@@ -443,7 +443,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.CURVES.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.CURVES,'x-y tabular data referenced in other sections',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.CURVES,'x-y tabular data referenced in other sections',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.CURVES,'x-y tabular data referenced in other sections',[QgsProcessing.TypeVector],'',True))
 
@@ -451,7 +451,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.TIMESERIES.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.TIMESERIES,'Time series data referenced in other sections',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.TIMESERIES,'Time series data referenced in other sections',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.TIMESERIES,'Time series data referenced in other sections',[QgsProcessing.TypeVector],'',True))
 
