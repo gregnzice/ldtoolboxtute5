@@ -197,7 +197,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
             if layer.name().lower() == self.DEMANDS.lower():
                 flag=1
 
-                self.addParameter(QgsProcessingParameterVectorLayer(self.DEMANDS,'Demands Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.DEMANDS,'Demands Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.DEMANDS,'Demands Table',[QgsProcessing.TypeVector],'',True))
 
@@ -206,14 +206,14 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
             if layer.name().lower() == self.STATUS.lower():
                 flag=1
 
-                self.addParameter(QgsProcessingParameterVectorLayer(self.STATUS,'Status Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.STATUS,'Status Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.STATUS,'Status Table',[QgsProcessing.TypeVector],'',True))
         flag=0
         for layer in layers:
             if layer.name().lower() == self.PATTERNS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.PATTERNS,'Patterns Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.PATTERNS,'Patterns Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.PATTERNS,'Patterns Table',[QgsProcessing.TypeVector],'',True))
 
@@ -221,7 +221,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.CURVES.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.CURVES,'Curves Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.CURVES,'Curves Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.CURVES,'Curves Table',[QgsProcessing.TypeVector],'',True))
 
@@ -229,7 +229,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.CONTROLS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.CONTROLS,'Controls Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.CONTROLS,'Controls Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.CONTROLS,'Controls Table',[QgsProcessing.TypeVector],'',True))
 
@@ -237,7 +237,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.QUALITY.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.QUALITY,'Quality Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.QUALITY,'Quality Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.QUALITY,'Quality Table',[QgsProcessing.TypeVector],'',True))
 
@@ -245,7 +245,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.MIXING.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.MIXING,'Mixing Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.MIXING,'Mixing Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.MIXING,'Mixing Table',[QgsProcessing.TypeVector],'',True))
 
@@ -253,7 +253,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.TIMES.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.TIMES,'Times Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']'))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.TIMES,'Times Table',[QgsProcessing.TypeVector],layer.name()))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.TIMES,'Times Table',[QgsProcessing.TypeVector],'',True))
 
@@ -261,7 +261,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.RULES.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.RULES,'Rules Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.RULES,'Rules Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.RULES,'Rules Table',[QgsProcessing.TypeVector],'',True))
 
@@ -269,7 +269,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.ENERGY.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.ENERGY,'Energy Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.ENERGY,'Energy Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.ENERGY,'Energy Table',[QgsProcessing.TypeVector],'',True))
 
@@ -277,7 +277,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.REACTIONS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.REACTIONS,'Reactions Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.REACTIONS,'Reactions Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.REACTIONS,'Reactions Table',[QgsProcessing.TypeVector],'',True))
 
@@ -285,7 +285,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.REPORT.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.REPORT,'Report Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.REPORT,'Report Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.REPORT,'Report Table',[QgsProcessing.TypeVector],'',True))
 
@@ -293,7 +293,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
         for layer in layers:
             if layer.name().lower() == self.OPTIONS.lower():
                 flag=1
-                self.addParameter(QgsProcessingParameterVectorLayer(self.OPTIONS,'Options Table',[QgsProcessing.TypeVector],layer.name()+ ' ['+layer.crs().authid()+']',True))
+                self.addParameter(QgsProcessingParameterVectorLayer(self.OPTIONS,'Options Table',[QgsProcessing.TypeVector],layer.name(),True))
                 break
         if flag==0: self.addParameter(QgsProcessingParameterVectorLayer(self.OPTIONS,'Options Table',[QgsProcessing.TypeVector],'',True))
 
