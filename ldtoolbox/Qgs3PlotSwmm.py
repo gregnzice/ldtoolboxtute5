@@ -42,7 +42,7 @@ from datetime import datetime
 import matplotlib
 matplotlib.use('Qt5Agg')
 from pylab import HourLocator,DateFormatter,figure
-from processing.core.ProcessingLog import ProcessingLog
+#from processing.core.ProcessingLog import ProcessingLog
 from processing.core.ProcessingConfig import ProcessingConfig, Setting
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QCoreApplication,QVariant

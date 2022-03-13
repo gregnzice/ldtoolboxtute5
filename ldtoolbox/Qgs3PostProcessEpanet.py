@@ -38,7 +38,7 @@ import re
 import subprocess
 from operator import itemgetter
 from numpy import mean
-from processing.core.ProcessingLog import ProcessingLog
+#from processing.core.ProcessingLog import ProcessingLog
 from processing.core.ProcessingConfig import ProcessingConfig, Setting
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QCoreApplication,QVariant
