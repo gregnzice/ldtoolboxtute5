@@ -2,7 +2,7 @@
 
 """
 /***************************************************************************
- Plugin for SURV319 Tute 9
+ Plugin for SURV319 Tute 6
                                  A QGIS plugin
                               -------------------
         Date                 : July 2018
@@ -45,7 +45,7 @@ from qgis.core import (QgsMessageLog,QgsProcessingAlgorithm,
                        QgsProject,
                        QgsLayerTreeLayer)
 
-class SURV319Tute9(QgsProcessingAlgorithm):
+class SURV319Tute6(QgsProcessingAlgorithm):
 
     #Variables to assign names of layers to.
     DEM='DEM'
@@ -99,9 +99,9 @@ class SURV319Tute9(QgsProcessingAlgorithm):
         return  {}
 
     def name(self):
-        return 'surv319tute9'
+        return 'surv319tute6'
     def tr(self, string):
-        return QCoreApplication.translate('surv319tute9', string)
+        return QCoreApplication.translate('surv319tute6', string)
 
     def icon(self):
         return QIcon(":/plugins/ldtoolbox/swmm.png")
@@ -111,10 +111,10 @@ class SURV319Tute9(QgsProcessingAlgorithm):
         Returns the translated algorithm name, which should be used for any
         user-visible display of the algorithm name.
         """
-        return self.tr('SURV319 Tute 9')
+        return self.tr('SURV319 Tute 6')
     def shortHelpString(self):
         file=os.path.realpath(__file__)
-        file = os.path.join(os.path.dirname(file),'Qgs3SURV319_Tute_9.help')
+        file = os.path.join(os.path.dirname(file),'Qgs3SURV319_Tute_6.help')
         if not os.path.exists(file):
             return ''
         with open(file) as helpf:
@@ -139,4 +139,4 @@ class SURV319Tute9(QgsProcessingAlgorithm):
         return 'SWMM'
 
     def createInstance(self):
-        return SURV319Tute9()
+        return SURV319Tute6()

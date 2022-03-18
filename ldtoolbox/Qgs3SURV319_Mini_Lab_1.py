@@ -2,7 +2,7 @@
 
 """
 /***************************************************************************
- Plugin for SURV319 Minilab 2
+ Plugin for SURV319 Minilab 1
                                  A QGIS plugin
                               -------------------
         Date                 : July 2018
@@ -42,7 +42,7 @@ from qgis.core import (QgsMessageLog,QgsProcessingAlgorithm,
                        QgsProcessingFeedback,QgsVectorLayer,
                        QgsProject,QgsLayerTreeLayer)
 
-class SURV319minilab2(QgsProcessingAlgorithm):
+class SURV319minilab1(QgsProcessingAlgorithm):
     #Variables for choosing the standard storm, the climate change storm, the storage tank and subcatchment to analyse.
     STORM1='TS1'
     STORM2='TS2'
@@ -209,7 +209,7 @@ class SURV319minilab2(QgsProcessingAlgorithm):
         #Now we set the Source Name field from the raingauges feature class back to the standard storm.
 
         #Insert codeblock here.
-        
+
 
         #Now we need to retrieve the coordinates of the storage tank so that we can feed these into the r.drain algorithm.
         for layer in layers:
@@ -262,9 +262,9 @@ class SURV319minilab2(QgsProcessingAlgorithm):
         return  {}
 
     def name(self):
-        return 'surv319minilab2'
+        return 'surv319minilab1'
     def tr(self, string):
-        return QCoreApplication.translate('surv319minilab2', string)
+        return QCoreApplication.translate('surv319minilab1', string)
 
     def icon(self):
         return QIcon(":/plugins/ldtoolbox/swmm.png")
@@ -274,10 +274,10 @@ class SURV319minilab2(QgsProcessingAlgorithm):
         Returns the translated algorithm name, which should be used for any
         user-visible display of the algorithm name.
         """
-        return self.tr('SURV319 Minilab 2')
+        return self.tr('SURV319 Minilab 1')
     def shortHelpString(self):
         file=os.path.realpath(__file__)
-        file = os.path.join(os.path.dirname(file),'Qgs3SURV319_Mini_Lab_2.help')
+        file = os.path.join(os.path.dirname(file),'Qgs3SURV319_Mini_Lab_1.help')
         if not os.path.exists(file):
             return ''
         with open(file) as helpf:
@@ -305,4 +305,4 @@ class SURV319minilab2(QgsProcessingAlgorithm):
         return super().flags() | QgsProcessingAlgorithm.FlagNoThreading | QgsProcessingAlgorithm.FlagDisplayNameIsLiteral
 
     def createInstance(self):
-        return SURV319minilab2()
+        return SURV319minilab1()

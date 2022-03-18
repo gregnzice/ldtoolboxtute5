@@ -37,7 +37,7 @@ from .Qgs3EpanetAlgorithm import Qgs3EpanetAlgorithm
 from .Qgs3SwmmAlgorithm import Qgs3SwmmAlgorithm
 from .Qgs3PostProcessEpanet import Qgs3PostProcessEpanet
 from .Qgs3PlotSwmm import Qgs3PlotSwmm
-from .Qgs3SURV319_Tute_9 import SURV319Tute9
+from .Qgs3SURV319_Tute_6 import SURV319Tute6
 from . import resources
 
 class LdtoolboxProvider(QgsProcessingProvider):
