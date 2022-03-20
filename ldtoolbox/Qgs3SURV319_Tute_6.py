@@ -57,8 +57,8 @@ class SURV319Tute6(QgsProcessingAlgorithm):
     def initAlgorithm(self, config):
 
         #We need parameters for the DEM to pit fill, name of Pit Mask Vector layer and the destination raster layer in which the pit filled DEM will be placed.
-        #Provide code for adding the input raster layer parameter here.
 
+        self.addParameter(QgsProcessingParameterRasterLayer(self.DEM, 'Original DEM', self.DEMNAME))
         self.addParameter(QgsProcessingParameterVectorLayer(self.PITMASK,'Pit Mask',[QgsProcessing.TypeVectorPoint],self.PITMASKNAME,False))
 
         #Provide code for adding the destination raster layer parameter here.
@@ -68,10 +68,12 @@ class SURV319Tute6(QgsProcessingAlgorithm):
 
         #We need to get the extents and pixel size of the input DEM to use as inputs for the GDAL Rasterize function to convert the Pit Mask vector layer to a raster layer that has a value of 1 underneath pit(s) and 0 everywhere else.
 
-
         rlayer=self.parameterAsRasterLayer(parameters,self.DEM,context)
         ext = rlayer.extent()
-        #Provide the code to get the input raster's xmin,xmax,ymin,ymax,pixelSizeX and PixelSizeY here.
+        #Provide the code to get the input raster's xmin,xmax,ymin,ymax here.
+
+        pixelSizeX = rlayer.rasterUnitsPerPixelX()
+        pixelSizeY = rlayer.rasterUnitsPerPixelY()
 
         #Now we set up a parameter dictionary to input to the gdal:rasterize tool.
         rasterize_param={ 'BURN' : 1, 'DATA_TYPE' : 5, 'EXTENT' :str(xmin)+','+str(xmax)+','+str(ymin)+','+str(ymax)+' [EPSG:'+rlayer.crs().authid() +']', 'FIELD' : None, 'HEIGHT' : pixelSizeY, 'INIT' : 0, 'INPUT' : self.parameterAsVectorLayer(parameters,self.PITMASK,context), 'INVERT' : False, 'NODATA' : 0, 'OPTIONS' : '', 'OUTPUT' : QgsProcessingUtils.tempFolder()+'/OUTPUT.tif', 'UNITS' : 1, 'WIDTH' : pixelSizeX}
@@ -83,8 +85,8 @@ class SURV319Tute6(QgsProcessingAlgorithm):
         outLayer = self.parameterAsOutputLayer(parameters, self.PITFILLEDDEM, context)
         #Below we set up a parameter dictionary for the TauDEM pit fill tool.
 
-        #Provide the code to set up the parameter dictionary to be input to the taudem:pitremove tool.
-
+        #Set up the parameter dictionary to be input to the taudem:pitremove tool.
+        pitfill_param = { '-4way' : False, '-depmask' : QgsProcessingUtils.tempFolder()+'/OUTPUT.tif', '-sdfr' : None, '-z' : rlayer, 'fel' : outLayer}
         #Below we run the taudem:pitremove tool with the pitfill_param dictionary and pipe any feedback into the processing log.
         run("taudem:pitremove",pitfill_param,feedback=QgsProcessingFeedback())
 
