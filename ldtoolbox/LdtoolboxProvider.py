@@ -75,7 +75,7 @@ class LdtoolboxProvider(QgsProcessingProvider):
         """
         Loads all algorithms belonging to this provider.
         """
-        self.algs = [Qgs3EpanetAlgorithm(),Qgs3PostProcessEpanet(),Qgs3SwmmAlgorithm(),Qgs3PlotSwmm(),SURV319Tute9()]
+        self.algs = [Qgs3EpanetAlgorithm(),Qgs3PostProcessEpanet(),Qgs3SwmmAlgorithm(),Qgs3PlotSwmm(),SURV319Tute6()]
         for alg in self.algs:
             self.addAlgorithm( alg )
 
