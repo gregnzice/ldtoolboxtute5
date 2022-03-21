@@ -238,12 +238,12 @@ class SURV319minilab1(QgsProcessingAlgorithm):
         run("grass7:r.drain",drain_param,feedback=QgsProcessingFeedback())
         #Now we load the drain.shp output (the path the water will flow down) into a QGIS layer called vlayer.
         vlayer = QgsVectorLayer(QgsProcessingUtils.tempFolder()+'/drain.shp','Overflow path', "ogr")
-        #Now we create the SURV319MiniLab2 group in the project's table of context if it doesn't exist already.
+        #Now we create the SURV319MiniLab2 group in the project's table of contents if it doesn't exist already.
         root = QgsProject.instance().layerTreeRoot()
-        if QgsProject.instance().layerTreeRoot().findGroup('SURV319MiniLab2 Layers'):
-            myGroup1=QgsProject.instance().layerTreeRoot().findGroup('SURV319MiniLab2 Layers')
+        if QgsProject.instance().layerTreeRoot().findGroup('SURV319MiniLab1 Layers'):
+            myGroup1=QgsProject.instance().layerTreeRoot().findGroup('SURV319MiniLab1 Layers')
         else:
-            myGroup1 = root.insertGroup(0,'SURV319MiniLab2 Layers')
+            myGroup1 = root.insertGroup(0,'SURV319MiniLab1 Layers')
         #Next we assign a coordinate reference system to the drain shapefile.
         layers = [layer for layer in QgsProject.instance().mapLayers().values()]
         for layer in layers:
@@ -256,7 +256,7 @@ class SURV319minilab1(QgsProcessingAlgorithm):
         props=vlayer.renderer().symbol()
         props.setWidth(0.7)
 
-        #Finally we add vlayer to the SURV3019MiniLab2 layer group.
+        #Finally we add vlayer to the SURV3019MiniLab1 layer group.
         myGroup1.insertChildNode(1,QgsLayerTreeLayer(vlayer))
 
         return  {}
