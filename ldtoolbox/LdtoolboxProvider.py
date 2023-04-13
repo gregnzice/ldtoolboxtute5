@@ -37,7 +37,7 @@ from .Qgs3EpanetAlgorithm import Qgs3EpanetAlgorithm
 from .Qgs3SwmmAlgorithm import Qgs3SwmmAlgorithm
 from .Qgs3PostProcessEpanet import Qgs3PostProcessEpanet
 from .Qgs3PlotSwmm import Qgs3PlotSwmm
-from .Qgs3SURV319_Tute_6 import SURV319Tute6
+from .Qgs3SURV319_Tute_9 import SURV319Tute9
 from . import resources
 
 class LdtoolboxProvider(QgsProcessingProvider):
@@ -75,7 +75,7 @@ class LdtoolboxProvider(QgsProcessingProvider):
         """
         Loads all algorithms belonging to this provider.
         """
-        self.algs = [Qgs3EpanetAlgorithm(),Qgs3PostProcessEpanet(),Qgs3SwmmAlgorithm(),Qgs3PlotSwmm(),SURV319Tute6()]
+        self.algs = [Qgs3EpanetAlgorithm(),Qgs3PostProcessEpanet(),Qgs3SwmmAlgorithm(),Qgs3PlotSwmm(),SURV319Tute9()]
         for alg in self.algs:
             self.addAlgorithm( alg )
 
