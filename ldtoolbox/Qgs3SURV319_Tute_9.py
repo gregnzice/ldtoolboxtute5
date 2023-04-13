@@ -101,7 +101,7 @@ class SURV319Tute9(QgsProcessingAlgorithm):
         return  {}
 
     def name(self):
-        return 'surv319tute6'
+        return 'surv319tute9'
     def tr(self, string):
         return QCoreApplication.translate('surv319tute9', string)
 
