@@ -707,7 +707,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
         (subcatchment_table, subcatchment_dest_id) = self.parameterAsSink(parameters, self.SUBCATCHMENT_OUTPUT, context,subcatchment_fields)
         total_size = os.path.getsize(outfilename)
         total_read = 0
-        o = io.open(outfilename,'r',encoding='utf-8')
+        o = io.open(outfilename,'r',encoding='latin1')
         o.seek(0)
         # get nodes results
         link_id = ''
