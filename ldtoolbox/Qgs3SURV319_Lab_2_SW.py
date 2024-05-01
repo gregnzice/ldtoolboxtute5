@@ -177,7 +177,6 @@ class SURV319lab2SW(QgsProcessingAlgorithm):
 
         #Now we modify the raingages feature class to change from 'Source Name' "Standard Storm" to 'Source Name' "Climate Change Storm".
 
-        #Insert codeblock here.
         layers = [layer for layer in QgsProject.instance().mapLayers().values()]
         for layer in layers:
             if layer.name().lower() == self.RAINGAGES.lower():
@@ -190,7 +189,7 @@ class SURV319lab2SW(QgsProcessingAlgorithm):
         #Now we run the model again with the climate change storm.
         
 
-        #Insert single line of code here.
+        #Insert single line of code here to run the model for the climate change storm.
         
 
         #Now we generate the plot for the climate change storm.
@@ -222,6 +221,9 @@ class SURV319lab2SW(QgsProcessingAlgorithm):
 
         #Insert codeblock here.
 
+        #There are no more new codeblocks to add in this python script after this point. 
+        # Please read through the rest of the file so that you can see how the tool determines 
+        # where any water that floods from the tank will flow, and then shows the path the water will take in the QGIS project.
 
         #Now we need to retrieve the coordinates of the storage tank so that we can feed these into the r.drain algorithm.
         for layer in layers:
