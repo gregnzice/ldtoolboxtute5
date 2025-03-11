@@ -481,7 +481,7 @@ class Qgs3EpanetAlgorithm(QgsProcessingAlgorithm):
             si = subprocess.STARTUPINFO()
             si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
             with subprocess.Popen(
-                [epanet_cli,filename,outfilename],
+                ['\& '+epanet_cli,filename,outfilename],
                 stdout=subprocess.PIPE,
                 shell=True,
                 stdin=open(os.devnull),
