@@ -658,7 +658,7 @@ class Qgs3SwmmAlgorithm(QgsProcessingAlgorithm):
             si = subprocess.STARTUPINFO()
             si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
             with subprocess.Popen(
-                [swmm_cli,filename,outfilename],
+                ['\& '+swmm_cli,filename,outfilename],
                 stdout=subprocess.PIPE,
                 shell=True,
                 stdin=open(os.devnull),
