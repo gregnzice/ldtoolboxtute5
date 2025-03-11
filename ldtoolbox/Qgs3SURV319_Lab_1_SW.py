@@ -42,7 +42,7 @@ from qgis.core import (QgsMessageLog,QgsProcessingAlgorithm,
                        QgsProcessingFeedback,QgsVectorLayer,
                        QgsProject,QgsLayerTreeLayer)
 
-class SURV319lab2SW(QgsProcessingAlgorithm):
+class SURV319lab1SW(QgsProcessingAlgorithm):
     #Variables for choosing the standard storm, the climate change storm, the storage tank and subcatchment to analyse.
     STORM1='TS1'
     STORM2='TS2'
@@ -276,9 +276,9 @@ class SURV319lab2SW(QgsProcessingAlgorithm):
         return  {}
 
     def name(self):
-        return 'surv319lab2SW'
+        return 'surv319lab1SW'
     def tr(self, string):
-        return QCoreApplication.translate('surv319lab2SW', string)
+        return QCoreApplication.translate('surv319lab1SW', string)
 
     def icon(self):
         return QIcon(":/plugins/ldtoolbox/swmm.png")
@@ -288,10 +288,10 @@ class SURV319lab2SW(QgsProcessingAlgorithm):
         Returns the translated algorithm name, which should be used for any
         user-visible display of the algorithm name.
         """
-        return self.tr('SURV319 Lab 2 SW')
+        return self.tr('SURV319 Lab 1 SW')
     def shortHelpString(self):
         file=os.path.realpath(__file__)
-        file = os.path.join(os.path.dirname(file),'Qgs3SURV319_Lab_2_SW.help')
+        file = os.path.join(os.path.dirname(file),'Qgs3SURV319_Lab_1_SW.help')
         if not os.path.exists(file):
             return ''
         with open(file) as helpf:
@@ -319,4 +319,4 @@ class SURV319lab2SW(QgsProcessingAlgorithm):
         return super().flags() | QgsProcessingAlgorithm.FlagNoThreading | QgsProcessingAlgorithm.FlagDisplayNameIsLiteral
 
     def createInstance(self):
-        return SURV319lab2SW()
+        return SURV319lab1SW()
