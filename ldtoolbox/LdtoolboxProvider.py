@@ -37,9 +37,9 @@ from .Qgs3EpanetAlgorithm import Qgs3EpanetAlgorithm
 from .Qgs3SwmmAlgorithm import Qgs3SwmmAlgorithm
 from .Qgs3PostProcessEpanet import Qgs3PostProcessEpanet
 from .Qgs3PlotSwmm import Qgs3PlotSwmm
-from .Qgs3SURV319_Tute_9 import SURV319Tute9
-# To add your Lab 2 stormwater modelling tool to the ldtoolbox, you will need to add a new line similar to line 40, except you need to update
-# the folder and class reference to point to your Lab 2 stormwater modelling tool.  You also need to add this tool
+from .Qgs3SURV319_Tute_5 import SURV319Tute5
+# To add your Lab 1 stormwater modelling tool to the ldtoolbox, you will need to add a new line similar to line 40, except you need to update
+# the folder and class reference to point to your Lab 1 stormwater modelling tool.  You also need to add this tool
 # to the end of the list of tools in line 81.
 from . import resources
 
@@ -78,7 +78,7 @@ class LdtoolboxProvider(QgsProcessingProvider):
         """
         Loads all algorithms belonging to this provider.
         """
-        self.algs = [Qgs3EpanetAlgorithm(),Qgs3PostProcessEpanet(),Qgs3SwmmAlgorithm(),Qgs3PlotSwmm(),SURV319Tute9()]
+        self.algs = [Qgs3EpanetAlgorithm(),Qgs3PostProcessEpanet(),Qgs3SwmmAlgorithm(),Qgs3PlotSwmm(),SURV319Tute5()]
         # For Lab 2, you need to add your Lab 2 stormwater modelling tool to the end of the list in Line 81 to register your
         # tool in the ldtoolbox so it shows up as being available in QGIS.
         for alg in self.algs:
