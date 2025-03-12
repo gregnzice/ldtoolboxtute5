@@ -113,7 +113,7 @@ class SURV319lab1SW(QgsProcessingAlgorithm):
 
         #Next we create a parameter for choosing the name of the pit-filled DEM.
         for layer in layers:
-            if "PitFilled" in layer.name():
+            if "PitFilled".lower() in layer.name().lower():
                 self.DEMNAME=layer.name()
         self.addParameter(QgsProcessingParameterRasterLayer(self.DEM,'Pit-filled DEM',self.DEMNAME))
 
