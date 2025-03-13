@@ -95,6 +95,8 @@ class SURV319lab1SW(QgsProcessingAlgorithm):
         layers = [layer for layer in QgsProject.instance().mapLayers().values()]
         for layer in layers:
             if layer.name().lower() == self.SUBCATCHMENTS.lower():
+                if self.SUBSLIST:
+                    self.SUBSLIST.clear()
                 for feature in layer.getFeatures():
                     self.SUBSLIST.append(feature['Name'])
         for i,member in enumerate(self.SUBSLIST):
@@ -105,6 +107,8 @@ class SURV319lab1SW(QgsProcessingAlgorithm):
         #Next we populate an enumerator from which we choose the tanks to analyse.
         for layer in layers:
             if layer.name().lower() == self.STORAGE.lower():
+                if self.TANKSLIST:
+                    self.TANKSLIST.clear()
                 for feature in layer.getFeatures():
                     self.TANKSLIST.append(feature['name'])
         for i,member in enumerate(self.TANKSLIST):
