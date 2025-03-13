@@ -258,10 +258,10 @@ class SURV319lab1SW(QgsProcessingAlgorithm):
         vlayer = QgsVectorLayer(QgsProcessingUtils.tempFolder()+'/drain.shp','Overflow path', "ogr")
         #Now we create the SURV319 Lab 2 group in the project's table of contents if it doesn't exist already.
         root = QgsProject.instance().layerTreeRoot()
-        if QgsProject.instance().layerTreeRoot().findGroup('SURV319 Lab 2 Layers'):
-            myGroup1=QgsProject.instance().layerTreeRoot().findGroup('SURV319 Lab 2 Layers')
+        if QgsProject.instance().layerTreeRoot().findGroup('SURV319 Lab 1 Layers'):
+            myGroup1=QgsProject.instance().layerTreeRoot().findGroup('SURV319 Lab 1 Layers')
         else:
-            myGroup1 = root.insertGroup(0,'SURV319 Lab 2 Layers')
+            myGroup1 = root.insertGroup(0,'SURV319 Lab 1 Layers')
         #Next we assign a coordinate reference system to the drain shapefile.
         layers = [layer for layer in QgsProject.instance().mapLayers().values()]
         for layer in layers:
@@ -274,7 +274,7 @@ class SURV319lab1SW(QgsProcessingAlgorithm):
         props=vlayer.renderer().symbol()
         props.setWidth(0.7)
 
-        #Finally we add vlayer to the SURV3019 Lab 2 layer group.
+        #Finally we add vlayer to the SURV3019 Lab 1 layer group.
         myGroup1.insertChildNode(1,QgsLayerTreeLayer(vlayer))
 
         return  {}
