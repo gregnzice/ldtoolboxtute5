@@ -89,7 +89,6 @@ class SURV319lab1SW(QgsProcessingAlgorithm):
         self.addParameter(QgsProcessingParameterString(self.STORM1,'Rainfall timeseries for the standard design storm','TS1'))
         #Next we add a parameter for the climate change design storm.
         #Insert code here.
-        self.addParameter(QgsProcessingParameterString(self.STORM2,'Rainfall timeseries for the future design storm','TS2'))
 
         #Next we populate an enumerator from which we choose the subcatchments to analyse.
         layers = [layer for layer in QgsProject.instance().mapLayers().values()]
@@ -192,23 +191,18 @@ class SURV319lab1SW(QgsProcessingAlgorithm):
 
         #Now we run the model again with the climate change storm.
         
-
         #Insert single line of code here to run the model for the climate change storm.
         
-
         #Now we generate the plot for the climate change storm.
 
         #Insert single line of code here.  Assign the output of the ldtoolboxLswmmplot tool to a variable named 'plotoutput2'.
 
-
         #Next we remove the layers created by the ldtools:swmmsim algorithm as we no longer need them once we have created the plot.
         #Insert codeblock here.
-        
 
         #Next we modify the title of the plot.
         #Insert single line of code here.
         
-
         #Now we calculate the volume of water that floods by retrieving the timestamps and flooding rate from the plot output and then using the scipy intergrate.cumtrapz algorithm to numerically integrate the flooding rate versus time.
 
         dates=plotoutput2['node_time'][0]
